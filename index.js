@@ -14,7 +14,7 @@ var plugin = function() {
   'use strict';
 
   var init = function() {
-      console.log('init');
+      //Does nothing
   };
 
   var compile = function(src, options, callback) {
@@ -22,7 +22,6 @@ var plugin = function() {
   };
 
   var render = function(tmpl, options, callback) {
-    console.log('render');
     var content;
     try {
       if(typeof tmpl === 'string') {
