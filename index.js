@@ -6,15 +6,22 @@
  * Licensed under the MIT license.
  */
 
-
+var fs = require('fs');
 var mustache = require('mustache');
+var markdown = require( "markdown" ).markdown;
 var partials = {};
 
 var plugin = function() {
   'use strict';
 
-  var init = function() {
-      //Does nothing
+  var init = function(options, params) {
+      params.assemble.options.data.md = function(){
+          return function(text, render) {
+              var file = fs.readFileSync(text.trim(), 'utf8');
+              var md = markdown.toHTML(file);
+              return render(md);
+          }
+      };
   };
 
   var compile = function(src, options, callback) {

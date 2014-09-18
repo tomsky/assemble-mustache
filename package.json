@@ -1,7 +1,7 @@
 {
   "name": "assemble-mustache",
   "description": "Assemble engine plugin for processing mustache templates.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/tomsky/assemble-mustache",
   "author": {
     "name": "Tom-Marius Olsen",
@@ -25,14 +25,13 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "mustache": "~0.8.1"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1"
+    "mustache": "~0.8.1",
+    "markdown": "~0.5.0"
   },
   "keywords": [
     "assemble",
     "assembleengine",
-    "mustache"
+    "mustache",
+    "markdown"
   ]
 }
