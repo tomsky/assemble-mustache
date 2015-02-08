@@ -8,7 +8,10 @@
 
 var fs = require('fs');
 var mustache = require('mustache');
-var markdown = require( "markdown" ).markdown;
+var marked = require('marked');
+marked.setOptions({
+  gfm: true
+});
 var partials = {};
 
 var plugin = function() {
@@ -17,7 +20,7 @@ var plugin = function() {
     var init = function(options, params) {
         params.assemble.options.data.markdown = function(){
             return function(text, render) {
-                var md = markdown.toHTML(text);
+                var md = marked(text);
                 return render(md);
             }
         };
@@ -25,7 +28,7 @@ var plugin = function() {
         params.assemble.options.data.md = function(){
             return function(text, render) {
                 var file = fs.readFileSync(text.trim(), 'utf8');
-                var md = markdown.toHTML(file);
+                var md = marked(file);
                 return render(md);
             }
         };
