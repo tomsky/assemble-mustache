@@ -1,7 +1,7 @@
 {
   "name": "assemble-mustache",
   "description": "Assemble engine plugin for processing mustache templates.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/tomsky/assemble-mustache",
   "author": {
     "name": "Tom-Marius Olsen",
