@@ -32,6 +32,13 @@ var plugin = function() {
                 return render(md);
             }
         };
+        
+        params.assemble.options.data.escape = function(){
+            return function(text, render){
+                var escaped = String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+                return render(escaped);
+            }
+        }
     };
 
     var compile = function(src, options, callback) {
